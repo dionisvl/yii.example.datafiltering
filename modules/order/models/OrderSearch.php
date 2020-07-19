@@ -2,10 +2,7 @@
 
 namespace app\modules\order\models;
 
-use app\modules\order\models\Service;
 use yii\base\Model;
-use yii\data\ActiveDataProvider;
-use app\modules\order\models\Order;
 use yii\data\ArrayDataProvider;
 use yii\db\Query;
 
@@ -42,7 +39,7 @@ class OrderSearch extends Order
      *
      * @param array $params
      *
-     * @return ActiveDataProvider
+     * @return ArrayDataProvider
      */
     public function search($params)
     {
@@ -97,5 +94,18 @@ class OrderSearch extends Order
         $dataProvider->allModels = $query->all();
 
         return $dataProvider;
+    }
+
+    public function formName()
+    {
+        return '';
+    }
+
+    public function load($data, $formName = null)
+    {
+        if (isset($data[self::ATTR_SEARCH_COLUMN])) {
+            $this->{$data[self::ATTR_SEARCH_COLUMN]} = $data[self::ATTR_SEARCH_VALUE] ?? null;
+        }
+        return parent::load($data, $formName);
     }
 }
