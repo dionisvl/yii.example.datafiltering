@@ -9,7 +9,12 @@ $config = [
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
+    ],
+    'modules' => [
+        'order' => [
+            'class' => 'app\modules\order\Module',
+        ],
     ],
     'components' => [
         'request' => [
@@ -42,15 +47,29 @@ $config = [
                 ],
             ],
         ],
+        'i18n' => [
+            'translations' => [
+                'order*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@app/modules/order/translation',
+                    'fileMap' => [
+                        'order' => 'order.php',
+                        'order/mode' => 'mode.php',
+                        'order/status' => 'status.php',
+                    ],
+                ],
+            ],
+        ],
         'db' => $db,
-        /*
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '/' => 'order/order/index'
             ],
         ],
-        */
+
     ],
     'params' => $params,
 ];
