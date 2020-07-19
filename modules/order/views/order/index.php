@@ -61,9 +61,10 @@ $this->registerCss("
                            placeholder="Search orders">
                     <span class="input-group-btn search-select-wrap">
                         <select class="form-control search-select" name="<?= OrderSearch::ATTR_SEARCH_COLUMN ?>">
-                            <option value="<?= Order::ATTR_ID ?>" selected="">Order ID</option>
-                            <option value="<?= Order::ATTR_LINK ?>"><?= \Yii::t('order', 'Link') ?></option>
-                            <option value="<?= Order::ATTR_USER ?>"><?= \Yii::t('order', 'Username') ?></option>
+                            <option value="<?= Order::ATTR_ID ?>"
+                                    selected=""><?= \Yii::t('order/order', Order::ATTR_ID); ?></option>
+                            <option value="<?= Order::ATTR_LINK ?>"><?= \Yii::t('order/order', Order::ATTR_LINK); ?></option>
+                            <option value="<?= Order::ATTR_USER ?>"><?= \Yii::t('order/order', Order::ATTR_USER); ?></option>
                         </select>
                         <button type="submit" class="btn btn-default">
                             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
@@ -84,20 +85,20 @@ $this->registerCss("
             Order::ATTR_ID,
             [
                 'attribute' => Order::ATTR_USER,
-                'header' => \Yii::t('order', 'User'),
+                'header' => \Yii::t('order/order', Order::ATTR_USER),
             ],
             [
                 'attribute' => Order::ATTR_LINK,
-                'header' => \Yii::t('order', 'Link'),
+                'header' => \Yii::t('order/order', Order::ATTR_LINK),
             ],
             [
                 'attribute' => Order::ATTR_QUANTITY,
-                'header' => \Yii::t('order', 'Quantity'),
+                'header' => \Yii::t('order/order', Order::ATTR_QUANTITY),
             ],
             [
                 'attribute' => Order::ATTR_SERVICE_ID,
                 'header' => HeaderDropDownWidget::widget([
-                    'title' => \Yii::t('order', 'Service'),
+                    'title' => \Yii::t('order/order', Order::ATTR_SERVICE_ID),
                     'column' => Order::ATTR_SERVICE_ID,
                     'choices' => OrderStatusFilterHelper::createDropDown(),
                 ]),
@@ -107,18 +108,20 @@ $this->registerCss("
             ],
             [
                 'attribute' => Order::ATTR_STATUS,
+                'header' => \Yii::t('order/order', Order::ATTR_STATUS),
                 'content' => function ($item) {
                     return OrderStatus::getLabelByValue($item[Order::ATTR_STATUS]);
                 },
             ],
             [
                 'attribute' => Order::ATTR_CREATED_AT,
+                'header' => \Yii::t('order/order', Order::ATTR_CREATED_AT),
                 'format' => ['date', 'php:Y-m-d H:i:s'],
             ],
             [
                 'attribute' => Order::ATTR_MODE,
                 'header' => HeaderDropDownWidget::widget([
-                    'title' => \Yii::t('order', 'Mode'),
+                    'title' => \Yii::t('order/order', Order::ATTR_MODE),
                     'column' => Order::ATTR_MODE,
                     'choices' => OrderMode::getAllLabels(),
                 ]),

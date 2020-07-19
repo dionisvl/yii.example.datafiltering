@@ -53,14 +53,14 @@ class Order extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            self::ATTR_ID => Yii::t('order', 'ID'),
-            self::ATTR_USER => Yii::t('order', 'User'),
-            self::ATTR_LINK => Yii::t('order', 'Link'),
-            self::ATTR_SERVICE_ID => Yii::t('order', 'Quantity'),
-            self::ATTR_QUANTITY => Yii::t('order', 'Service ID'),
-            self::ATTR_STATUS => Yii::t('order', 'Status'),
-            self::ATTR_CREATED_AT => Yii::t('order', 'Created At'),
-            self::ATTR_MODE => Yii::t('order', 'Mode'),
+            self::ATTR_ID => Yii::t('order/order', 'ID'),
+            self::ATTR_USER => Yii::t('order/order', 'User'),
+            self::ATTR_LINK => Yii::t('order/order', 'Link'),
+            self::ATTR_SERVICE_ID => Yii::t('order/order', 'Quantity'),
+            self::ATTR_QUANTITY => Yii::t('order/order', 'Service ID'),
+            self::ATTR_STATUS => Yii::t('order/order', 'Status'),
+            self::ATTR_CREATED_AT => Yii::t('order/order', 'Created At'),
+            self::ATTR_MODE => Yii::t('order/order', 'Mode'),
         ];
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-use app\modules\order\entities\Order;
+use app\modules\order\models\Order;
 
 return [
     Order::ATTR_ID => 'id',

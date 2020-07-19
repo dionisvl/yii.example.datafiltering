@@ -33,8 +33,6 @@ class OrderStatus
      */
     public static function getAllLabels(): array
     {
-//        \Yii::$app->language = 'ru-RU';
-        //dd(\Yii::t('order/status', self::TITLE_PENDING));
         return [
             self::PENDING => \Yii::t('order/status', self::TITLE_PENDING),
             self::IN_PROGRESS => \Yii::t('order/status', self::TITLE_IN_PROGRESS),
