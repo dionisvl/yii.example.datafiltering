@@ -52,7 +52,11 @@ $this->registerCss("
         ]) ?>
         <li class="pull-right custom-search">
             <form class="form-inline" action="/" method="get">
+                <a href="<?= 'download' . ltrim(Yii::$app->request->getUrl(), '/'); ?>" target="_blank"
+                   class="btn btn-info">Save result</a>
+
                 <div class="input-group">
+
                     <input type="text" name="<?= OrderSearch::ATTR_SEARCH_VALUE ?>" class="form-control" value=""
                            placeholder="Search orders">
                     <span class="input-group-btn search-select-wrap">

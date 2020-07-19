@@ -1,5 +1,7 @@
 <?php
 
+/* Include debug functions */
+require_once(__DIR__ . '/functions.php');
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
@@ -66,7 +68,8 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                '/' => 'order/order/index'
+                '/' => 'order/order/index',
+                '/download' => 'order/order/download'
             ],
         ],
 
